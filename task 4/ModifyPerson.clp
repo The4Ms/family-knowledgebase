@@ -15,7 +15,7 @@
 
 =>
 
-	(if(eq ?newName _) then (bind ?newName ?personName))
+	(if(eq ?newName "_") then (bind ?newName ?personName))
 
 	(if(eq ?newGender _) then (bind ?newGender ?currentGender))
 
