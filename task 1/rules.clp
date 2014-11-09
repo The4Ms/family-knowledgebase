@@ -25,7 +25,6 @@
 	)
 	=>
 	(assert (Parent ?parentName ?childName))
-	(printout t ?parentName " is " ?childName "'s parent" crlf)
 )
 
 (defrule isSibling
@@ -63,7 +62,6 @@
 	)
 	=>
 	(assert (Sibling ?name ?siblingName))
-	(printout t ?name " is " ?siblingName "'s sibling" crlf)
 )
 
 (defrule isSpouse
@@ -89,10 +87,11 @@
 	)
 	=>
 	(assert (Spouse ?name1 ?name2))
-	(printout t ?name1 " is " ?name2 "'s spouse" crlf)
 )
 
 (defrule isNephew
+	(Selected 12)
+
 	(Person (name ?name)
 			(gender ?)
 			(birthYear ?)
@@ -123,6 +122,7 @@
 )
 
 (defrule isNiece
+	(Selected 13)
 	(Person (name ?name)
 			(gender ?)
 			(birthYear ?)
@@ -153,6 +153,7 @@
 )
 
 (defrule isUncle
+	(Selected 14)
 	(Person (name ?uncleName)
 			(gender m)
 			(birthYear ?)
@@ -184,6 +185,7 @@
 )
 
 (defrule isAunt
+	(Selected 15)
 	(Person (name ?auntName)
 			(gender f)
 			(birthYear ?)
@@ -215,6 +217,7 @@
 )
 
 (defrule isCousin
+	(Selected 11)
 	(Person (name ?cousin1Name)
 			(gender ?)
 			(birthYear ?)
@@ -252,6 +255,7 @@
 )
 
 (defrule isGrandfather
+	(Selected 16)
 	(Person (name ?grandfatherName)
 			(gender m)
 			(birthYear ?)
@@ -282,6 +286,7 @@
 )
 
 (defrule isGrandmother
+	(Selected 17)
 	(Person (name ?grandmotherName)
 			(gender f)
 			(birthYear ?)
