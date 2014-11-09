@@ -1,20 +1,3 @@
-(defrule personRemoval
-	?factIdx1 <- (RemovePerson ?name)
-	?factIdx2 <- (Person (name ?name)
-						 (gender ?)
-						 (birthYear ?)
-						 (birthYearFlag ?)
-						 (height ?)
-						 (heightFlag ?)
-						 (parents $?)
-						 (siblings $?)
-					 	 (spouse ?)
-				 )
-	=>
-	(retract ?factIdx1)
-	(retract ?factIdx2)
-)
-
 (defrule cleanFacts
 	?factIdx1 <- (CleanFacts)
 	(or
