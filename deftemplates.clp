@@ -1,0 +1,11 @@
+(deftemplate Person
+	(slot name (type STRING))
+	(slot gender (type SYMBOL) (allowed-symbols m f))
+	(slot birthYear (type NUMBER))
+	(slot birthYearFlag (type SYMBOL) (allowed-symbols l m e))
+	(slot height (type NUMBER))
+	(slot heightFlag (type SYMBOL) (allowed-symbols l m e))
+	(multislot parents (type STRING) (cardinality 0 2))
+	(multislot siblings (type STRING))
+	(slot spouse (type STRING))
+)
