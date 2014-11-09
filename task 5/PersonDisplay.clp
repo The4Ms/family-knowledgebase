@@ -26,10 +26,11 @@
 	(if (eq ?hf e) then (printout t "Height: " ?h crlf))
 )
 
-(deffunction displayPersonData ()
-	(printout t "person name: " crlf)
-	(bind ?name (read))
+(defrule displayPersonData
+	(Selected 21)
+=>
+	(printout t "What is the person name ? " crlf)
+	(bind ?name (readline))
 	
 	(assert (DisplayPerson ?name))
-	(run)
 )
