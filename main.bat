@@ -11,6 +11,8 @@
 
 (load "PersonsFacts.clp")
 
+(load "UserInterface.clp")
+
 (reset)
 
 (run)
