@@ -2,7 +2,7 @@
 	(Selected 23)
 =>
 	(printout t "What is the person Name ?" crlf)
-	(bind ?inputName (read))
+	(bind ?inputName (readline))
 	
 	(printout t "What is the person gender ? (m/f): " crlf)
 	(bind ?inputGender (read))
@@ -20,7 +20,7 @@
 	(bind ?inputSiblings (explode$ (readline)))
 	
 	(printout t "Who are his/her spouse ? (only one) : " crlf)
-	(bind ?inputSpouse (read))
+	(bind ?inputSpouse (readline))
 	
 	(assert
 		(Person
