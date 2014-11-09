@@ -26,11 +26,31 @@
 	(if (eq ?hf e) then (printout t "Height: " ?h crlf))
 )
 
-(defrule displayPersonData
+(defrule PersonDisplayByChild
+	?factIdx1 <- (DisplayPersonByChild ?childName)
+	(Person (name ?childName)(parents ?parent1 ?parent2))
+	
+=>
+	(retract ?factIdx1)
+	(assert (DisplayPerson ?parent1))
+	(assert (DisplayPerson ?parent2))
+)
+
+(defrule displayPersonByNameUserInterface
 	(Selected 21)
 =>
 	(printout t "What is the person name ? " crlf)
 	(bind ?name (readline))
 	
 	(assert (DisplayPerson ?name))
+)
+
+
+(defrule displayPersonByChildUserInterface
+	(Selected 221)
+=>
+	(printout t "What is the name of the child ? " crlf)
+	(bind ?name (readline))
+	
+	(assert (DisplayPersonByChild ?name))
 )
