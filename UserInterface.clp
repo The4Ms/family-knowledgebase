@@ -2,25 +2,28 @@
 
 =>
 	(printout t "- Infering relations about:" crlf)
-	(printout t "      1- cousins " crlf)
-	(printout t "      2- Nephews" crlf)
-	(printout t "      3- Nieces" crlf)
-	(printout t "      4- Uncle" crlf)
-	(printout t "      5- Aunt" crlf)
-	(printout t "      6- Grandfather" crlf)
-	(printout t "      7- Grandmother" crlf)
+	(printout t "      11- cousins " crlf)
+	(printout t "      12- Nephews" crlf)
+	(printout t "      13- Nieces" crlf)
+	(printout t "      14- Uncle" crlf)
+	(printout t "      15- Aunt" crlf)
+	(printout t "      16- Grandfather" crlf)
+	(printout t "      17- Grandmother" crlf)
 	(printout t "- Familly knowledge base" crlf)
-	(printout t "      8- Display a familly member by name" crlf)
-	(printout t "      9- Display a familly member by parent" crlf)
-	(printout t "      9- Add family member" crlf)
-	(printout t "      11- Remove family member" crlf)
+	(printout t "      21- Display a familly member by name" crlf)
+	(printout t "      22- Display a familly member by parent" crlf)
+	(printout t "      23- Add family member" crlf)
+	(printout t "      24- Remove family member" crlf)
 	(printout t "- Modify family member properties" crlf)
-	(printout t "      8- Modify familly member name" crlf)
-	(printout t "      9- Display a familly member by data" crlf)
-	(printout t "      9- Add family member" crlf)
-	(printout t "      11- Remove family member" crlf)
+	(printout t "      31- Modify familly member name" crlf)
+	(printout t "      32- Modify familly member gender" crlf)
+	(printout t "      33- Modify familly member birthyear" crlf)
+	(printout t "      34- Modify familly member height" crlf)
+	(printout t "      35- Modify familly member parents" crlf)
+	(printout t "      36- Modify familly member siblings" crlf)
+	(printout t "      37- Modify familly member spouse" crlf)
 	(printout t "- Search familly members by properties" crlf)
-	(printout t "      12- Show all individuals that match a combination of properties familly knowledge base" crlf)
+	(printout t "      41- Show all individuals that match a combination of properties familly knowledge base" crlf)
 
 	(bind ?selectedOption (read))
 
@@ -28,7 +31,7 @@
 )
 
 (defrule GetQueryData
-	(Selected 12)
+	(Selected 41)
 =>
 	(printout t "Enter the criteria to search upon in the same order, write 'all' if you do not care about a specific property:" crlf)
 	
