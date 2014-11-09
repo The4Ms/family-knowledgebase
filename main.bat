@@ -1,4 +1,4 @@
-(load "deftemplates.clp")
+(load "templatePerson.clp")
 
 (load "deffunctions.clp")
 
