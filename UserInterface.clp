@@ -1,5 +1,5 @@
 (defrule ShowMainMenu
-
+	(not (Selected ?))
 =>
 	(printout t "- Infering relations about:" crlf)
 	(printout t "      11- cousins " crlf)
@@ -28,6 +28,14 @@
 	(bind ?selectedOption (read))
 
 	(assert(Selected ?selectedOption))
+)
+
+(defrule ClearSelected
+	(declare (salience -10000))
+
+	?selectedIndex <- (Selected ?)
+=>
+	(retract ?selectedIndex)
 )
 
 (defrule GetQueryData
