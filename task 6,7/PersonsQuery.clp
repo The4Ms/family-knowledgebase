@@ -4,6 +4,7 @@
 	(QueryParent ?queryParent)
 	(QuerySiblings ?querySiblings)
 	(QueryHeight ?queryHeightType ?queryHeight)
+	(QueryAge ?queryAgeType ?queryAge)
 
 	(Person (name ?personName)
 			(gender ?personGender)
@@ -19,6 +20,7 @@
 									)
 			)
 			(height ?personHeight)
+			(birthYear ?birthyear)
 	)
 
 	(or 
@@ -33,7 +35,7 @@
 
 
 	(or
-		(test(eq ?queryHeightType all))
+		(test(eq ?queryHeightType "all"))
 
 		(test(and (eq ?queryHeightType "equals to")
 				  (= ?personHeight ?queryHeight)
@@ -47,6 +49,25 @@
 
 		(test(and (eq ?queryHeightType "less than")
 				  (< ?personHeight ?queryHeight)
+			 )
+		)
+	)
+
+	(or
+		(test(eq ?queryAgeType "all"))
+
+		(test(and (eq ?queryAgeType "equals to")
+				  (= (abs(- ?birthyear ?*CURRENT_YEAR*)) ?queryAge)
+			 )
+		)
+
+		(test(and (eq ?queryAgeType "older than")
+				  (> (abs(- ?birthyear ?*CURRENT_YEAR*)) ?queryAge)
+			 )
+		)
+
+		(test(and (eq ?queryAgeType "younger than")
+				  (< (abs(- ?birthyear ?*CURRENT_YEAR*)) ?queryAge)
 			 )
 		)
 	)

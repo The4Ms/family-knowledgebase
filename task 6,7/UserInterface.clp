@@ -19,10 +19,14 @@
 	(bind ?answer (read))
 	(assert (QuerySiblings ?answer))
 	
-	(printout t "What is the height range ? (equals to|greater than|less than) then press enter then input the height  or write 'all'" crlf)
+	(printout t "What is the height range ? (equals to|greater than|less than) then press enter then input the height  or write 'all' twice" crlf)
 	(bind ?type (readline))
 	(bind ?height (read))
 	(assert (QueryHeight ?type ?height))
-	(printout t ?type crlf)
+
+	(printout t "What is the age range ? (equals to|older than|younger than) then press enter then input the age or write 'all' twice" crlf)
+	(bind ?ageType (readline))
+	(bind ?age (read))
+	(assert (QueryAge ?ageType ?age))
 
 )

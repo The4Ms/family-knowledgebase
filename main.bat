@@ -1,3 +1,5 @@
+(defglobal ?*CURRENT_YEAR* = 2014) 
+
 (load* "PersonTemplate.clp")
 
 (load* "task 1\\Helpers.clp")
