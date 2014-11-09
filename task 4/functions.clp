@@ -180,11 +180,3 @@
 	(assert (CleanFacts))
 	(run)
 )
-
-(deffunction displayPersonData ()
-	(printout t "person name: " crlf)
-	(bind ?name (read))
-	
-	(assert (DisplayPerson ?name))
-	(run)
-)

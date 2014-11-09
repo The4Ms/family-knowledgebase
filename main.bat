@@ -1,10 +1,11 @@
 (load "PersonTemplate.clp")
 
-(load "deffunctions.clp")
-
 (load "task 1\\rules.clp")
 
-(load "defrules.clp")
+(load "task 4\\functions.clp")
+(load "task 4\\rules.clp")
+
+(load "task 5\\PersonDisplay.clp")
 
 (load "PersonsFacts.clp")
 
