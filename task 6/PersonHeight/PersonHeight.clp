@@ -1,8 +1,21 @@
-(defrule PersonHeightEquals
+(defrule PersonQuery
 	(QueryHeight ?queryType ?queryheight)
-	(Person (name ?personName)(height ?personHeight))
+	
+	(QueryGender ?queryGender)
+
+	(Person (name ?personName)
+			(height ?personHeight)
+			(gender ?personGender)
+	)
+	
+	(or 
+		(test(eq ?queryGender all))
+		(test(eq ?personGender ?queryGender))
+	)
 
 	(or
+		(test(eq ?queryType all))
+		
 		(test(and (eq ?queryType "equals to")
 				  (= ?personHeight ?queryheight)
 			 )
@@ -18,8 +31,9 @@
 			 )
 		)
 	)
+
 	=>
 	
-	(printout t ?personName "'s height " ?queryType " " ?queryheight " (person's height " ?personHeight ")" crlf)
+	(printout t ?personName crlf)
 
 )
