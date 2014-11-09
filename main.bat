@@ -1,4 +1,4 @@
-(load "templatePerson.clp")
+(load "PersonTemplate.clp")
 
 (load "deffunctions.clp")
 
@@ -6,7 +6,7 @@
 
 (load "defrules.clp")
 
-(load "deffacts.clp")
+(load "PersonsFacts.clp")
 
 (reset)
 
