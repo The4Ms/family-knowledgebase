@@ -1,16 +1,26 @@
 (defrule PersonQuery
 	(QueryGender ?queryGender)
 	(QuerySpouse ?querySpouse)
+	(QueryParent ?queryParent)
+	(QuerySiblings ?querySiblings)
 	(QueryHeight ?queryHeightType ?queryHeight)
 
 	(Person (name ?personName)
 			(gender ?personGender)
-			(parents $?personParents)
+			(parents $?personParent&:(or
+										(eq ?queryParent all)
+										(member$ ?queryParent ?personParent)
+									)
+			)
 			(spouse ?personSpouse)
-			(siblings $?personSiblings)
+			(siblings $?personSiblings&:(or
+										(eq ?querySiblings all)
+										(member$ ?querySiblings ?personSiblings)
+									)
+			)
 			(height ?personHeight)
 	)
-	
+
 	(or 
 		(test(eq ?queryGender all))
 		(test(eq ?personGender ?queryGender))
@@ -20,6 +30,7 @@
 		(test(eq ?querySpouse all))
 		(test(eq ?personSpouse ?querySpouse))
 	)
+
 
 	(or
 		(test(eq ?queryHeightType all))

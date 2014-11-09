@@ -8,13 +8,17 @@
 
 (assert(QueryGender all))
 (assert(QuerySpouse all))
+(assert(QueryParent all))
+(assert(QuerySiblings all))
 
-(assert(QueryHeight "equals to" 180))
+(bind ?FactIndex (assert(QueryHeight "equals to" 180)))
 (run)
 
-(assert(QueryHeight "less than" 180))
+(retract ?FactIndex)
+(bind ?FactIndex (assert(QueryHeight "less than" 180)))
 (run)
 
-(assert(QueryHeight "greater than" 175))
+(retract ?FactIndex)
+(bind ?FactIndex (assert(QueryHeight "greater than" 175)))
 (run)
 
