@@ -7,6 +7,7 @@
 (load "PersonHeight.clp")
 
 (assert(QueryGender all))
+(assert(QuerySpouse all))
 
 (assert(QueryHeight "equals to" 180))
 (run)
