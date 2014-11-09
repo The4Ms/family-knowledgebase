@@ -4,7 +4,6 @@
 
 (load* "task 2,3\\AddPerson.clp")
 
-(load* "task 4\\functions.clp")
 (load* "task 4\\rules.clp")
 (load* "task 4\\UserInterface.clp")
 
