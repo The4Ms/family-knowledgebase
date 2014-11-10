@@ -1,6 +1,12 @@
 
-(defrule isGrandfather
+(defrule isGrandfather2
 	(Selected 16)
+	(Grandfather ?grandfatherName ?grandchildName)
+	=>
+	(printout t ?grandfatherName " is " ?grandchildName "'s grandfather" crlf)
+)
+
+(defrule isGrandfather
 	(Person (name ?grandfatherName)(gender m)(parents $?))
 	(Person (name ?grandchildName)(parents ?parent1Name ?parent2Name))
 
@@ -10,11 +16,17 @@
 	)
 	=>
 	(assert (Grandfather ?grandfatherName ?grandchildName))
-	(printout t ?grandfatherName " is " ?grandchildName "'s grandfather" crlf)
+)
+
+(defrule isGrandmother2
+	(Selected 17)
+	
+	(Grandmother ?grandmotherName ?grandchildName)
+	=>
+	(printout t ?grandmotherName " is " ?grandchildName "'s grandmother" crlf)
 )
 
 (defrule isGrandmother
-	(Selected 17)
 	
 	(Person (name ?grandmotherName)(gender f)(parents $?))
 	(Person (name ?grandchildName)(parents ?parent1Name ?parent2Name))
@@ -25,5 +37,4 @@
 	)
 	=>
 	(assert (Grandmother ?grandmotherName ?grandchildName))
-	(printout t ?grandmotherName " is " ?grandchildName "'s grandmother" crlf)
 )

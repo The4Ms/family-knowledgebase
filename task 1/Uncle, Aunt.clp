@@ -1,7 +1,14 @@
 
-(defrule isUncle
+(defrule isUncle2
 	(Selected 14)
+	(Uncle ?uncleName ?name)
 	
+	=>
+	
+	(printout t ?uncleName " is " ?name "'s uncle" crlf)
+)
+
+(defrule isUncle
 	(Person (name ?uncleName)(gender m))
 	(Person (name ?name)(parents ?parent1 ?parent2))
 
@@ -12,11 +19,16 @@
 	)
 	=>
 	(assert (Uncle ?uncleName ?name))
-	(printout t ?uncleName " is " ?name "'s uncle" crlf)
+)
+
+(defrule isAunt2
+	(Selected 15)
+	(Aunt ?auntName ?name)
+	=>
+	(printout t ?auntName " is " ?name "'s aunt" crlf)
 )
 
 (defrule isAunt
-	(Selected 15)
 	
 	(Person (name ?auntName)(gender f))
 	(Person (name ?name)(parents ?parent1 ?parent2))
@@ -28,5 +40,4 @@
 	)
 	=>
 	(assert (Aunt ?auntName ?name))
-	(printout t ?auntName " is " ?name "'s aunt" crlf)
 )

@@ -2,6 +2,13 @@
 (defrule isNephew
 	(Selected 12)
 
+	(Nephew ?nephewName ?name)
+	
+	=>
+	(printout t ?nephewName " is " ?name "'s nephew" crlf)
+)
+
+(defrule isNephew2
 	(Person (name ?name))
 	(Person (name ?nephewName)(gender m)(parents ?parent1 ?parent2))
 
@@ -11,12 +18,16 @@
 	)
 	=>
 	(assert (Nephew ?nephewName ?name))
-	(printout t ?nephewName " is " ?name "'s nephew" crlf)
+)
+
+(defrule isNiece2
+	(Selected 13)
+	(Niece ?nieceName ?name)
+	=>
+	(printout t ?nieceName " is " ?name "'s niece" crlf)
 )
 
 (defrule isNiece
-	(Selected 13)
-
 	(Person (name ?name))
 	(Person (name ?nieceName)
 			(gender f)
@@ -28,13 +39,18 @@
 	)
 	=>
 	(assert (Niece ?nieceName ?name))
-	(printout t ?nieceName " is " ?name "'s niece" crlf)
 )
 
 
-(defrule isCousin
+(defrule isCousin2
 	(Selected 11)
 	
+	(Cousin ?cousin1Name ?cousin2Name)
+	=>
+	(printout t ?cousin1Name " is " ?cousin2Name "'s cousin" crlf)
+)
+
+(defrule isCousin	
 	(Person (name ?cousin1Name)(parents ?cousin1Parent1Name ?cousin1Parent2Name))
 	(Person (name ?cousin2Name)(parents ?cousin2Parent1Name ?cousin2Parent2Name))
 
@@ -51,5 +67,4 @@
 	)
 	=>
 	(assert (Cousin ?cousin1Name ?cousin2Name))
-	(printout t ?cousin1Name " is " ?cousin2Name "'s cousin" crlf)
 )
