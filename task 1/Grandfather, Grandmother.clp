@@ -4,6 +4,7 @@
 	(Grandfather ?grandfatherName ?grandchildName)
 	=>
 	(printout t ?grandfatherName " is " ?grandchildName "'s grandfather" crlf)
+	(assert (CompareHeight ?grandfatherName ?grandchildName))
 )
 
 (defrule isGrandfather
@@ -24,6 +25,7 @@
 	(Grandmother ?grandmotherName ?grandchildName)
 	=>
 	(printout t ?grandmotherName " is " ?grandchildName "'s grandmother" crlf)
+	(assert (CompareHeight ?grandmotherName ?grandchildName))
 )
 
 (defrule isGrandmother

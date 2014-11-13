@@ -2,6 +2,7 @@
 
 (load* "PersonTemplate.clp")
 
+(load* "task 1\\CompareHeights.clp")
 (load* "task 1\\Helpers.clp")
 (load* "task 1\\Cousin, Nieve, Nephew.clp")
 (load* "task 1\\Uncle, Aunt.clp")

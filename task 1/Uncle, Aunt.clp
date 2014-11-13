@@ -6,6 +6,7 @@
 	=>
 	
 	(printout t ?uncleName " is " ?name "'s uncle" crlf)
+	(assert (CompareHeight ?uncleName ?name))
 )
 
 (defrule isUncle
@@ -26,6 +27,7 @@
 	(Aunt ?auntName ?name)
 	=>
 	(printout t ?auntName " is " ?name "'s aunt" crlf)
+	(assert (CompareHeight ?auntName ?name))
 )
 
 (defrule isAunt
