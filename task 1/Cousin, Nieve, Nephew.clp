@@ -10,7 +10,7 @@
 
 (defrule isNephew2
 	(Person (name ?name))
-	(Person (name ?nephewName)(gender m)(parents ?parent1 ?parent2))
+	(Person (name ?nephewName&:(neq ?nephewName ?name))(gender m)(parents ?parent1 ?parent2))
 
 	(or
 		(Sibling ?name ?parent1)
@@ -30,7 +30,7 @@
 
 (defrule isNiece
 	(Person (name ?name))
-	(Person (name ?nieceName)
+	(Person (name ?nieceName&:(neq ?nieceName ?name))
 			(gender f)
 			(parents ?parent1 ?parent2)
 	)
@@ -54,7 +54,7 @@
 
 (defrule isCousin	
 	(Person (name ?cousin1Name)(parents ?cousin1Parent1Name ?cousin1Parent2Name))
-	(Person (name ?cousin2Name)(parents ?cousin2Parent1Name ?cousin2Parent2Name))
+	(Person (name ?cousin2Name&:(neq ?cousin1Name ?cousin2Name))(parents ?cousin2Parent1Name ?cousin2Parent2Name))
 
 	(or
 		(Uncle ?cousin1Parent1Name ?cousin2Name)
