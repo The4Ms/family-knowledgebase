@@ -4,9 +4,9 @@
 	(Person (name ?name2)(height ?height2))
 	=>
 
-	(if(> ?height1 ?height2) then (printout t "and just for the record between you and me, " ?name1 " is taller than " ?name2 crlf crlf))
+	(if(> ?height1 ?height2) then (printout t ", " ?name1 " is taller in height than " ?name2 crlf))
 
-	(if(< ?height1 ?height2) then (printout t "and just for the record between you and me, " ?name1 " is shorter than " ?name2 crlf crlf))
+	(if(< ?height1 ?height2) then (printout t ", " ?name1 " is shorter in height than " ?name2 crlf))
 
-	(if(= ?height1 ?height2) then (printout t "and just for the record between you and me, " ?name1 " has the same height as " ?name2 crlf crlf))	
+	(if(= ?height1 ?height2) then (printout t ", " ?name1 " is equal in height of " ?name2 crlf))	
 )

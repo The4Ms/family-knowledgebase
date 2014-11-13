@@ -3,7 +3,7 @@
 	(Selected 16)
 	(Grandfather ?grandfatherName ?grandchildName)
 	=>
-	(printout t ?grandfatherName " is " ?grandchildName "'s grandfather" crlf)
+	(printout t ?grandfatherName " is " ?grandchildName "'s grandfather")
 	(assert (CompareHeight ?grandfatherName ?grandchildName))
 )
 
@@ -24,7 +24,7 @@
 	
 	(Grandmother ?grandmotherName ?grandchildName)
 	=>
-	(printout t ?grandmotherName " is " ?grandchildName "'s grandmother" crlf)
+	(printout t ?grandmotherName " is " ?grandchildName "'s grandmother")
 	(assert (CompareHeight ?grandmotherName ?grandchildName))
 )
 

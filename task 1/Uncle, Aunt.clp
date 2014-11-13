@@ -5,7 +5,7 @@
 	
 	=>
 	
-	(printout t ?uncleName " is " ?name "'s uncle" crlf)
+	(printout t ?uncleName " is " ?name "'s uncle")
 	(assert (CompareHeight ?uncleName ?name))
 )
 
@@ -26,7 +26,7 @@
 	(Selected 15)
 	(Aunt ?auntName ?name)
 	=>
-	(printout t ?auntName " is " ?name "'s aunt" crlf)
+	(printout t ?auntName " is " ?name "'s aunt")
 	(assert (CompareHeight ?auntName ?name))
 )
 

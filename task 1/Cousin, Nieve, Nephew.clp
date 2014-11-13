@@ -4,7 +4,7 @@
 	(Nephew ?nephewName ?name)
 	
 	=>
-	(printout t ?nephewName " is " ?name "'s nephew" crlf)
+	(printout t ?nephewName " is " ?name "'s nephew")
 	(assert (CompareHeight ?nephewName ?name))
 )
 
@@ -24,7 +24,7 @@
 	(Selected 13)
 	(Niece ?nieceName ?name)
 	=>
-	(printout t ?nieceName " is " ?name "'s niece" crlf)
+	(printout t ?nieceName " is " ?name "'s niece")
 	(assert (CompareHeight ?nieceName ?name))
 )
 
@@ -48,7 +48,7 @@
 	
 	(Cousin ?cousin1Name ?cousin2Name)
 	=>
-	(printout t ?cousin1Name " is " ?cousin2Name "'s cousin" crlf)
+	(printout t ?cousin1Name " is " ?cousin2Name "'s cousin")
 	(assert (CompareHeight ?cousin1Name ?cousin2Name))
 )
 
