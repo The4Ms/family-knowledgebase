@@ -18,11 +18,15 @@
 		(and
 			(test (eq ?p11 ?p21))
 			(test (eq ?p12 ?p22))
+			(test (neq ?p11 ""))
+			(test (neq ?p12 ""))
 		)
 		
 		(and
 			(test (eq ?p11 ?p22))
 			(test (eq ?p12 ?p21))
+			(test (neq ?p11 ""))
+			(test (neq ?p12 ""))
 		)
 	)
 	=>

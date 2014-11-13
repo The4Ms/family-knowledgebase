@@ -56,6 +56,8 @@
 	(Person (name ?cousin1Name)(parents ?cousin1Parent1Name ?cousin1Parent2Name))
 	(Person (name ?cousin2Name&:(neq ?cousin1Name ?cousin2Name))(parents ?cousin2Parent1Name ?cousin2Parent2Name))
 
+	(not (Sibling ?cousin1Name ?cousin2Name))
+	(not (Sibling ?cousin2Name ?cousin1Name))
 	(or
 		(Uncle ?cousin1Parent1Name ?cousin2Name)
 		(Aunt ?cousin1Parent1Name ?cousin2Name)
